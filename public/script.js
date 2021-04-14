@@ -1,24 +1,15 @@
-async function getDining() {
-  const output = document.querySelector('#myTable');
-  const diningRequest = await fetch('/api/dining');
-  // waits until the request completes...
+async function getMeals() {
   console.log('response');
+  const diningRequest = await fetch('/api/meals');
   const diningData = await diningRequest.json();
-
-  diningData.data.forEach((diningHall) => {
-    console.log('diningHall');
-    const appendItem = document.createElement('tr');
-    appendItem.innerHTML = `
-	    <td>
-	      ${diningHall.hall_id}
-	    </td>
-	    <td>
-	      ${diningHall.hall_name}
-	    </td>
-	    <td>
-	      ${diningHall.hall_address}
-	    </td>`;
-    output.append(appendItem);
-  });
+  return diningData;
 }
-window.onload = getDining;
+
+async function windowActions() {
+  console.log('loaded window');
+  const meals = await getMeals();
+  console.table(meals);
+  
+}
+
+window.onload = windowActions;

@@ -1,6 +1,6 @@
 async function getMeals() {
   console.log('response');
-  const diningRequest = await fetch('/api/meals');
+  const diningRequest = await fetch('/api/wholeMeal');
   const diningData = await diningRequest.json();
   return diningData;
 }
@@ -8,7 +8,7 @@ async function getMeals() {
 async function windowActions() {
   console.log('loaded window');
   const meals = await getMeals();
-  console.table(meals);
+  console.table(meals.data);
   
 }
 

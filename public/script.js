@@ -21,8 +21,10 @@ async function windowActions() {
     const random = getRandomIntInclusive(0, mealData.length - 1);
     return mealData[random];
   });
-  
-  console.table(selectedMeals); 
+ // Challenge: How to display the randomly selected Meals/Macros on a table. 
+  console.table(selectedMeals);
+  console.table(mealData);
 }
 
 window.onload = windowActions;
+

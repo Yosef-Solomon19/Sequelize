@@ -21,13 +21,12 @@ async function windowActions() {
     const random = getRandomIntInclusive(0, mealData.length - 1);
     return mealData[random];
   });
- // Challenge: How to display the randomly selected Meals/Macros on a table. 
-  console.table(selectedMeals);
+ // console.table(selectedMeals);
+  console.log(typeof selectedMeals);
   return selectedMeals;
 }
 
 function mealChart(selectedMeals,macros) {
-  console.table(selectedMeals);
   const macroName = [];
   selectedMeals.forEach((meal) =>{
     const macroNameDict = {y: '', label: ''};
@@ -108,3 +107,5 @@ window.onload = async function () {
     chart.render();
   }
 };
+
+// window.onload = getTable;

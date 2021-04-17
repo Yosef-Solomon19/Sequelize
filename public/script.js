@@ -40,17 +40,18 @@ function mealChart(selectedMeals,macros) {
 
 
 window.onload = async function () {
-  let dataChart = await windowActions();
+  const dataChart = await windowActions();
+  
   const chart = new CanvasJS.Chart('chartContainer', {
     animationEnabled: true,
     title: {
-      text: '10 Random Meals Macro Chart'
+      text: '10 Random Meals Macros Chart'
     },
-    axisX : {
-
+    axisX: {
+      
     },
-    axisY : {
-
+    axisY: {
+      
     },
     toolTip: {
       shared: true
@@ -62,42 +63,41 @@ window.onload = async function () {
     data: [{
       type: 'stackedBar',
       name: 'calories',
-      showInLegend: true,
-      datapoints: mealChart(dataChart, 'calories')
+      showInLegend: 'true',
+      dataPoints: mealChart(dataChart, 'calories')
     },
     {
       type: 'stackedBar',
       name: 'cholesterol',
-      showInLegend: true,
-      datapoints: mealChart(dataChart, 'cholesterol')
+      showInLegend: 'true',
+      dataPoints: mealChart(dataChart, 'cholesterol')
     },
     {
       type: 'stackedBar',
       name: 'sodium',
-      showInLegend: true,
-      datapoints: mealChart(dataChart, 'sodium')
+      showInLegend: 'true',
+      dataPoints: mealChart(dataChart, 'sodium')
     },
     {
       type: 'stackedBar',
       name: 'carbs',
-      showInLegend: true,
-      datapoints: mealChart(dataChart, 'carbs')
+      showInLegend: 'true',
+      dataPoints: mealChart(dataChart, 'carbs')
     },
     {
       type: 'stackedBar',
       name: 'protein',
-      showInLegend: true,
-      datapoints: mealChart(dataChart, 'protein')
+      showInLegend: 'true',
+      dataPoints: mealChart(dataChart, 'protein')
     },
     {
       type: 'stackedBar',
       name: 'fat',
-      showInLegend: true,
-      datapoints: mealChart(dataChart, 'fat')
+      showInLegend: 'true',
+      dataPoints: mealChart(dataChart, 'fat')
     }]
   });
   chart.render();
-  // console.log(chart);
   
   function toggleDataSeries(e) {
     if (typeof (e.dataSeries.visible) === 'undefined' || e.dataSeries.visible) {

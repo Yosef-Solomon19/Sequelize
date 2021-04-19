@@ -25,7 +25,27 @@ async function windowActions() {
   console.log(typeof selectedMeals);
   return selectedMeals;
 }
-
+/*
+function getTable(selectedMeals) {
+  const check = selectedMeals;
+  const output = document.querySelector('#myTable');
+  check.data.forEach((diningHall) => {
+    console.log('diningHall');
+    const appendItem = document.createElement('tr');
+    appendItem.innerHTML = `
+	    <td>
+	      ${diningHall.meal_id}
+	    </td>
+	    <td>
+	      ${diningHall.meal_name}
+	    </td>
+	    <td>
+	      ${diningHall.meal_category}
+	    </td>`;
+    output.append(appendItem);
+  });
+}
+*/
 function mealChart(selectedMeals,macros) {
   const macroName = [];
   selectedMeals.forEach((meal) =>{

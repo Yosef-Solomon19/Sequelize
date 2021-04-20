@@ -21,15 +21,9 @@ async function windowActions() {
     const random = getRandomIntInclusive(0, mealData.length - 1);
     return mealData[random];
   });
- // console.table(selectedMeals);
-  console.log(typeof selectedMeals);
-  return selectedMeals;
-}
-/*
-function getTable(selectedMeals) {
-  const check = selectedMeals;
+  // console.table(selectedMeals);
   const output = document.querySelector('#myTable');
-  check.data.forEach((diningHall) => {
+  selectedMeals.forEach((diningHall) => {
     console.log('diningHall');
     const appendItem = document.createElement('tr');
     appendItem.innerHTML = `
@@ -41,11 +35,32 @@ function getTable(selectedMeals) {
 	    </td>
 	    <td>
 	      ${diningHall.meal_category}
+	    </td>
+      <td>
+	      ${diningHall.calories}
+	    </td>
+      <td>
+	      ${diningHall.serving_size}
+	    </td>
+      <td>
+	      ${diningHall.cholesterol}
+	    </td>
+      <td>
+	      ${diningHall.carbs}
+	    </td>
+      <td>
+	      ${diningHall.protein}
+	    </td>
+      <td>
+	      ${diningHall.fat}
 	    </td>`;
     output.append(appendItem);
   });
+  console.log(selectedMeals);
+  console.log(typeof selectedMeals);  
+  return selectedMeals;
 }
-*/
+
 function mealChart(selectedMeals,macros) {
   const macroName = [];
   selectedMeals.forEach((meal) =>{
